@@ -22,8 +22,6 @@ def play() -> set:
             correct=0
             print("YOU NEED TO ENTER 0=Rock, 1=Papper, 2=Scissors")
 
-
-
     player_result=item[player]
     print("You choose",player_result,'.')
     import random
@@ -48,6 +46,36 @@ def play() -> set:
     ts=time.time()
     run={'datestamp':ts,'player':player_result,'computer':computer_result,'victory':victory}
     list_result.append(run)
+#6. create statistics
+def Create_statistics(argument):
+    """use the log to define
+    % victory player + total
+    % victory computer + total
+    % stand + total
+    number of match played"""
+    player_victory=0
+    computer_victory=0
+    stand=0
+    nb_rounds=0
+    player_per=0
+    computer_per=0
+    stand_per=0
+    for i in argument:
+        nb_rounds+=1
+        if i['victory']=='computer':
+            computer_victory+=1
+        elif i['victory']=='player':
+            player_victory+=1
+        elif i['victory']=='stand':
+            stand+=1
+            player_per=player_victory/nb_rounds
+            computer_per=computer_victory/nb_rounds
+            stand_per=stand/nb_rounds
+    print('Round played', nb_rounds)
+    print(line)
+    print('Computer Victories:', computer_victory, ' - ', computer_per,' %')
+    print('Player Victories:', player_victory, ' - ', player_per,' %')
+    print('Stands:', stand, ' - ', stand_per,' %')
 # list for log
 list_result=[]
 # 1. welcome message and explaination of to play the first run
@@ -72,13 +100,12 @@ play()
 #4. do you want to play again ?
 i=1
 while i ==1:
-    print("Do you want to play again ?")
-    print("Press any key to play again, no to quit, stats to see the game statistics")
+    print("PRESS ANY KEY TO PLAY AGAIN, type 'no' to quit, 'stats' to see the game statistics")
     again=str(input())
     if again=='no':
         i=0
     elif again=='stats':
-        pprint.pprint(list_result)
+        Create_statistics(list_result)
     else:
         play()
 
@@ -90,21 +117,5 @@ while i ==1:
 - victory
 the log will then be written in a text file named game.log
 """
-
-#6. create statistics
-"""use the log to define
-% victory player + total
-% victory computer + total
-% stand + total
-number of match played"""
-player_victory=0
-computer_victory=0
-stand=0
-player_per=0
-computer_per=0
-stand_per=0
-
-for i in list_result:
-    print(i)
 #7. display statistics
 #8. log the statistics in a game logger
