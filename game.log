@@ -1,0 +1,5 @@
+{'datestamp': 1611937195.5104618, 'player': 'Papper', 'computer': 'Rock', 'victory': 'player'}
+{'datestamp': 1611937195.9116244, 'player': 'Papper', 'computer': 'Rock', 'victory': 'player'}
+{'datestamp': 1611937196.259317, 'player': 'Papper', 'computer': 'Scissors', 'victory': 'computer'}
+{'datestamp': 1611937196.6135287, 'player': 'Papper', 'computer': 'Rock', 'victory': 'player'}
+{'datestamp': 1611937196.99907, 'player': 'Papper', 'computer': 'Papper', 'victory': 'stand'}

@@ -117,5 +117,8 @@ while i ==1:
 - victory
 the log will then be written in a text file named game.log
 """
+with open('game.log', 'a') as log:
+    for i in list_result:
+        print(i, file=log)
 #7. display statistics
 #8. log the statistics in a game logger
